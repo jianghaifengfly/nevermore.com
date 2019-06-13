@@ -1,0 +1,29 @@
+改变 文件的用户 和 组
+chown 用户名 文件名
+chgrp 组名 文件名
+安装 mysql
+1、创建mysql 用户
+2、安装cmake 
+3、下载源码包
+解压
+然后
+cmake . -DCMAKE_INSTALL_PREFIX=/application/mysql-5.6.42 \
+-DMYSQL_DATADIR=/application/mysql-5.6.42/data \
+-DMYSQL_UNIX_ADDR=/application/mysql-5.6.42/tmp/mysql.sock \
+-DDEFAULT_CHARSET=utf8 \
+-DDEFAULT_COLLATION=utf8_general_ci \
+-DWITH_EXTRA_CHARSETS=all\
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1 \
+-DWITH_ZLIB=bundled \
+-DWITH_SSL=bundled \
+-DENABLED_LOCAL_INFILE=1 \
+-DWITH_EMBEDDED_SERVER=1 \
+-DENABLE_DOWNLOADS=1 \
+-DWITH_DEBUG=0
+make 
+make install
+
+创建软连接
